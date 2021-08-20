@@ -1,0 +1,82 @@
+<h2>Template: Switches</h2>
+<hr>
+
+<form [formGroup]="miFormulario" (ngSubmit)="guardar()">
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Género</label>
+        <div class="col-sm-9">
+
+            <div class="form-check">
+                <input  class="form-check-input" 
+                        type="radio" 
+                        value="M"
+                        formControlName="genero" 
+                        id="flexRadioDefault">
+                <label class="from-check-label" for="flexRadioDefault">
+                    Masculino
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input  class="form-check-input" 
+                        type="radio" 
+                        value="F"      
+                        formControlName="genero" 
+                        id="flexRadioDefault2">
+                <label class="from-check-label" for="flexRadioDefault2">
+                    Femenino
+                </label>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Notificaciones</label>
+        <div class="col-sm-9">
+
+            <div class="form-check form-switch mt-2">
+                <input  class="form-check-input" 
+                        type="checkbox" 
+                        id="flexSwitchCheckChecked"
+                        formControlName="notificaciones" >
+                <label class="form-check-label" for="flexSwitchCheckChecked">
+                   Quiero recibir Notificaciones
+                </label>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9">
+
+            <div class="form-check">
+                <input  class="form-check-input" 
+                        type="checkbox" 
+                        id="flexCheckDefault"
+                        formControlName="condiciones" >
+                <label class="form-check-label" for="flexCheckDefault">
+                   Términos y condiciones
+                </label>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary float-end" type="submit">
+                Guardar
+            </button>
+        </div>
+    </div>
+</form>
+
+<span>Valor del Formulario</span>
+<pre>{{ miFormulario.value | json }}</pre>
+
+<span>Valid</span>
+<pre>{{ miFormulario.valid }}</pre>
